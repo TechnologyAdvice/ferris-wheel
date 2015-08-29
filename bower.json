@@ -1,0 +1,29 @@
+{
+  "name": "rollercoaster",
+  "version": "0.1.0",
+  "homepage": "https://github.com/TechnologyAdvice/rollercoaster",
+  "authors": [
+    "levithomason <me@levithomason.com>"
+  ],
+  "description": "Share your highs and lows.",
+  "main": "index.html",
+  "keywords": [
+    "highs",
+    "lows",
+    "share"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "angularjs#~1.4.5",
+    "bootstrap": "~3.3.5",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.1"
+  }
+}

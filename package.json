@@ -1,0 +1,47 @@
+{
+  "name": "rollercoaster",
+  "version": "0.1.0",
+  "description": "Share your highs and lows.",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm i && live-server",
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechnologyAdvice/rollercoaster.git"
+  },
+  "keywords": [
+    "highs",
+    "lows",
+    "share"
+  ],
+  "author": "Levi Thomason",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechnologyAdvice/rollercoaster/issues"
+  },
+  "homepage": "https://github.com/TechnologyAdvice/rollercoaster#readme",
+  "devDependencies": {
+    "del": "^1.2.1",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-debug": "^2.1.0",
+    "gulp-iife": "0.0.7",
+    "gulp-less": "^3.0.3",
+    "gulp-load-plugins": "^0.10.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-ng-annotate": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.0",
+    "live-server": "^0.8.1",
+    "ng-annotate": "^1.0.2",
+    "run-sequence": "^1.1.2"
+  },
+  "dependencies": {
+    "gulp-js-prettify": "^0.1.0"
+  }
+}
