@@ -3,7 +3,7 @@ function header($timeout) {
     restrict: 'E',
     replace: true,
     scope: {},
-    templateUrl: 'build/components/header/header.html',
+    templateUrl: 'components/header/header.html',
     link: function(scope, elm, attrs) {
       var hue = Math.floor(Math.random() * 360);
 
@@ -18,15 +18,15 @@ function header($timeout) {
         ]),
 
         // random faded color
-        'background-color': 'hsl(' + hue + ', 30%, 60%)'
+        'background-color': 'hsl(' + hue + ', 20%, 60%)'
       };
 
-      scope.jumbotronBg = 'hsl(' + hue + ', 30%, 80%)';
+      scope.jumbotronBg = 'hsl(' + hue + ', 10%, 50%)';
 
       scope.imageElm.fadeTo(0, 0);
 
       $timeout(function() {
-        scope.imageElm.fadeTo(1000, 0.5);
+        scope.imageElm.fadeTo(1000, 0.4);
       }, 500);
     }
   }

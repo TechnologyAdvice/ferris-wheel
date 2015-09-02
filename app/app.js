@@ -11,7 +11,7 @@ angular.module('App', [
   .config(function($routeProvider, $locationProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'build/views/home/home.html',
+        templateUrl: 'views/home/home.html',
         controller: 'HomeController',
         controllerAs: 'home'
       })

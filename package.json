@@ -1,17 +1,17 @@
 {
-  "name": "rollercoaster",
+  "name": "ferris-wheel",
   "version": "0.1.0",
   "description": "Share your highs and lows.",
   "main": "index.js",
   "scripts": {
     "postinstall": "bower install",
-    "prestart": "npm i && live-server",
+    "prestart": "npm i",
     "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/TechnologyAdvice/rollercoaster.git"
+    "url": "git+https://github.com/TechnologyAdvice/ferris-wheel.git"
   },
   "keywords": [
     "highs",
@@ -21,27 +21,38 @@
   "author": "Levi Thomason",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/TechnologyAdvice/rollercoaster/issues"
+    "url": "https://github.com/TechnologyAdvice/ferris-wheel/issues"
   },
-  "homepage": "https://github.com/TechnologyAdvice/rollercoaster#readme",
+  "homepage": "https://github.com/TechnologyAdvice/ferris-wheel#readme",
   "devDependencies": {
     "del": "^1.2.1",
     "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.6.0",
     "gulp-debug": "^2.1.0",
+    "gulp-help": "^1.6.1",
+    "gulp-html-replace": "^1.5.1",
+    "gulp-if": "^1.2.5",
     "gulp-iife": "0.0.7",
+    "gulp-js-prettify": "^0.1.0",
     "gulp-less": "^3.0.3",
     "gulp-load-plugins": "^0.10.0",
     "gulp-minify-css": "^1.2.1",
+    "gulp-minify-html": "^1.0.4",
     "gulp-ng-annotate": "^1.1.0",
     "gulp-plumber": "^1.0.1",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.4.0",
-    "live-server": "^0.8.1",
+    "livereload": "^0.3.7",
     "ng-annotate": "^1.0.2",
+    "require-dir": "^0.3.0",
     "run-sequence": "^1.1.2"
   },
   "dependencies": {
-    "gulp-js-prettify": "^0.1.0"
+    "body-parser": "^1.13.3",
+    "express": "^4.13.3",
+    "firebase": "^2.2.9",
+    "logfmt": "^1.2.0",
+    "request": "^2.61.0"
   }
 }
