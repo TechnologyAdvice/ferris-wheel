@@ -6,7 +6,7 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var CONFIG = require('../CONFIG.js');
+var CONFIG = require('../config.js');
 var slackHelper = require('./slack-helper');
 
 ////
