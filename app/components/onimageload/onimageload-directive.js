@@ -9,6 +9,10 @@ function onimageload() {
         elm.off('load');
         scope.onimageload(e);
       });
+
+      scope.$on('$destroy', function() {
+        elm.off();
+      });
     }
   }
 }

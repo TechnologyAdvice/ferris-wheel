@@ -5,6 +5,7 @@ angular.module('App', [
   // our components
   'App.header',
   'App.onimageload',
+  'App.shareForm',
 
   // our views
   'App.home'

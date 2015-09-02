@@ -1,13 +1,15 @@
-<div class="jumbotron" style="background-color: {{jumbotronBg}};">
-  <div class="container">
-    <h1>
-      Ferris Wheel
-    </h1>
+<div class="fw-header">
+  <div class="jumbotron" style="background-color: {{jumbotronBg}};">
+    <div class="container">
+      <h1>
+        Ferris Wheel
+      </h1>
 
-    <p class="lead">
-      Share your highs and lows.
-    </p>
+      <p class="lead">
+        Share your highs and lows.
+      </p>
+    </div>
+
+    <img class="fw-bg-image" ng-repeat="src in imageUrls" ng-src="{{src}}" onimageload="onImageLoad" />
   </div>
-
-  <img class="bg-image" ng-repeat="src in imageUrls" ng-src="{{src}}" onimageload="onImageLoad" />
 </div>

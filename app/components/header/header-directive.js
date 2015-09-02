@@ -19,13 +19,13 @@ function header($timeout) {
       ];
 
       scope.cycleImages = function cycleImages(img) {
-        scope.imageElm = angular.element(img || '.bg-image');
+        scope.imageElm = angular.element(img || '.fw-bg-image');
 
         // hide the one showing
-        scope.imageElm.filter('.show').removeClass('show');
+        scope.imageElm.filter('.fw-show').removeClass('fw-show');
 
         // show a random one
-        angular.element(_.sample(scope.imageElm)).addClass('show');
+        angular.element(_.sample(scope.imageElm)).addClass('fw-show');
 
         // recurse
         $timeout(function() {

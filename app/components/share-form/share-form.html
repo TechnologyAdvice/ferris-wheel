@@ -1,0 +1,24 @@
+<div class="fw-share-form">
+  <form name="shareForm" method="POST" role="form">
+
+    <div class="form-group">
+      <button type="button" class="btn btn-default" ng-click="toggleIsHigh()">
+      <span class="fw-high" ng-show="isHigh">
+        <i class="fa fa-smile-o"></i>
+        <span class="fw-label">high</span>
+      </span>
+      <span class="fw-low" ng-show="!isHigh">
+        <i class="fa fa-frown-o"></i>
+        <span class="fw-label">low</span>
+      </span>
+      </button>
+
+      <input type="email" class="form-control" name="content" id="" placeholder="Do share...">
+
+      <button type="submit" class="btn btn-success">
+        <i class="fa fa-arrow-right"></i>
+      </button>
+    </div>
+
+  </form>
+</div>

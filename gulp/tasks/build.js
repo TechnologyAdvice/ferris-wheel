@@ -84,16 +84,15 @@ gulp.task('build-html', function() {
     .pipe(gulp.dest(config.paths.build));
 });
 
-gulp.task('build-less', function(cb) {
-  return gulp.src([
-    config.paths.app + '/less/**/*.less',
-    config.paths.app + '/components/**/*.less',
-    config.paths.app + '/views/**/*.less'
-  ])
-    .pipe(g.plumber())
+gulp.task('build-less', function() {
+  return gulp.src(config.paths.app + '/app.less')
+    .pipe(g.plumber(function(err) {
+      console.log(err);
+      this.emit('end');
+    }))
     .pipe(g.less())
     .pipe(g.autoprefixer())
-    .pipe(g.concat('app.css'))
+    .pipe(g.rename('app.css'))
     .pipe(gulp.dest(config.paths.build))
     .pipe(g.minifyCss())
     .pipe(g.rename('app.min.css'))
