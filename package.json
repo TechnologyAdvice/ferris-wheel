@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "description": "Share your highs and lows.",
   "main": "index.js",
+  "engines": {
+    "node": "0.12.x",
+    "npm": "2.1.x"
+  },
   "scripts": {
     "postinstall": "bower install",
     "preinstall": "npm i -g bower gulp",
@@ -25,8 +29,11 @@
     "url": "https://github.com/TechnologyAdvice/ferris-wheel/issues"
   },
   "homepage": "https://github.com/TechnologyAdvice/ferris-wheel#readme",
-  "devDependencies": {
+  "dependencies": {
+    "body-parser": "^1.13.3",
     "del": "^1.2.1",
+    "express": "^4.13.3",
+    "firebase": "^2.2.9",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.6.0",
@@ -45,15 +52,10 @@
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.4.0",
     "livereload": "^0.3.7",
+    "logfmt": "^1.2.0",
     "ng-annotate": "^1.0.2",
+    "request": "^2.61.0",
     "require-dir": "^0.3.0",
     "run-sequence": "^1.1.2"
-  },
-  "dependencies": {
-    "body-parser": "^1.13.3",
-    "express": "^4.13.3",
-    "firebase": "^2.2.9",
-    "logfmt": "^1.2.0",
-    "request": "^2.61.0"
   }
 }
