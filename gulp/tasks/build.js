@@ -86,13 +86,14 @@ gulp.task('build-html', function() {
 
 gulp.task('build-less', function(cb) {
   return gulp.src([
+    config.paths.app + '/less/**/*.less',
     config.paths.app + '/components/**/*.less',
     config.paths.app + '/views/**/*.less'
   ])
     .pipe(g.plumber())
     .pipe(g.less())
     .pipe(g.autoprefixer())
-    .pipe(g.rename('app.css'))
+    .pipe(g.concat('app.css'))
     .pipe(gulp.dest(config.paths.build))
     .pipe(g.minifyCss())
     .pipe(g.rename('app.min.css'))

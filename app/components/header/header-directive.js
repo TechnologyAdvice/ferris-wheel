@@ -7,27 +7,38 @@ function header($timeout) {
     link: function(scope, elm, attrs) {
       var hue = Math.floor(Math.random() * 360);
 
-      scope.imageElm = angular.element('.bg-image');
-      scope.bgImageStyle = {
-        // random ferris wheel images
-        'background-image': _.sample([
-          'url("//images.unsplash.com/photo-1419847359648-f75ea40be039")',
-          'url("//images.unsplash.com/reserve/N13RIliTTASBbuYyszgq_P9020914-54.jpg")',
-          'url("//images.unsplash.com/photo-1416397202228-6b2eb5b3bb26")',
-          'url("//images.unsplash.com/photo-1427301229091-8cd171473e32")'
-        ]),
+      scope.anImageHasLoaded = false;
 
-        // random faded color
-        'background-color': 'hsl(' + hue + ', 20%, 60%)'
+      scope.jumbotronBg = 'hsl(' + hue + ', 40%, 60%)';
+
+      scope.imageUrls = [
+        '//images.unsplash.com/photo-1419847359648-f75ea40be039',
+        '//images.unsplash.com/reserve/N13RIliTTASBbuYyszgq_P9020914-54.jpg',
+        '//images.unsplash.com/photo-1416397202228-6b2eb5b3bb26',
+        '//images.unsplash.com/photo-1427301229091-8cd171473e32'
+      ];
+
+      scope.cycleImages = function cycleImages(img) {
+        scope.imageElm = angular.element(img || '.bg-image');
+
+        // hide the one showing
+        scope.imageElm.filter('.show').removeClass('show');
+
+        // show a random one
+        angular.element(_.sample(scope.imageElm)).addClass('show');
+
+        // recurse
+        $timeout(function() {
+          scope.cycleImages()
+        }, 5000);
       };
 
-      scope.jumbotronBg = 'hsl(' + hue + ', 10%, 50%)';
-
-      scope.imageElm.fadeTo(0, 0);
-
-      $timeout(function() {
-        scope.imageElm.fadeTo(1000, 0.4);
-      }, 500);
+      scope.onImageLoad = function onImageLoad(e) {
+        if (!scope.anImageHasLoaded) {
+          scope.anImageHasLoaded = true;
+          scope.cycleImages(e.target);
+        }
+      };
     }
   }
 }

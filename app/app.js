@@ -4,6 +4,7 @@ angular.module('App', [
 
   // our components
   'App.header',
+  'App.onimageload',
 
   // our views
   'App.home'

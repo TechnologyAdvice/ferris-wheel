@@ -5,11 +5,9 @@
     </h1>
 
     <p class="lead">
-      <i class="fa fa-smile-o"></i>
       Share your highs and lows.
-      <i class="fa fa-frown-o"></i>
     </p>
-
   </div>
-  <div class="bg-image" ng-style="bgImageStyle"></div>
+
+  <img class="bg-image" ng-repeat="src in imageUrls" ng-src="{{src}}" onimageload="onImageLoad" />
 </div>
