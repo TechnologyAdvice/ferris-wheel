@@ -1,3 +1,36 @@
 <div class="container">
-  <share-form></share-form>
+  <div class="col-xs-12">
+    <share-form></share-form>
+  </div>
+
+  <div class="col-xs-12">
+    <hr />
+  </div>
+
+  <div class="col-sm-6">
+    <h4 class="page-header">
+      <i class="fa fa-smile-o"></i>
+      highs
+    </h4>
+
+    <div class="panel" ng-repeat="high in [1,2,3,4,5]">
+      <div class="panel-body">
+        Something so rad, I had to share it.
+        <div class="text-muted">&mdash; Someone</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <h4 class="page-header">
+      <i class="fa fa-frown-o"></i>
+      lows
+    </h4>
+    <div class="panel" ng-repeat="low in [1,2,3,4]">
+      <div class="panel-body">
+        There'd be no highs if this were not here.
+        <div class="text-muted">&mdash; Someone</div>
+      </div>
+    </div>
+  </div>
 </div>

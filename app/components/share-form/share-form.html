@@ -1,23 +1,31 @@
 <div class="fw-share-form">
-  <form name="shareForm" method="POST" role="form">
+  <form name="shareForm">
 
     <div class="form-group">
-      <button type="button" class="btn btn-default" ng-click="toggleIsHigh()">
-      <span class="fw-high" ng-show="isHigh">
-        <i class="fa fa-smile-o"></i>
-        <span class="fw-label">high</span>
-      </span>
-      <span class="fw-low" ng-show="!isHigh">
-        <i class="fa fa-frown-o"></i>
-        <span class="fw-label">low</span>
-      </span>
-      </button>
 
-      <input type="email" class="form-control" name="content" id="" placeholder="Do share...">
+      <div class="input-group input-group-lg">
 
-      <button type="submit" class="btn btn-success">
-        <i class="fa fa-arrow-right"></i>
-      </button>
+        <div class="input-group-btn">
+          <button type="button" class="btn btn-lg btn-default" ng-click="toggleIsHigh()">
+            <span class="fw-high" ng-show="isHigh">
+              <i class="fa fa-smile-o"></i>
+              <span class="fw-label">high</span>
+            </span>
+            <span class="fw-low" ng-show="!isHigh">
+              <i class="fa fa-frown-o"></i>
+              <span class="fw-label">low</span>
+            </span>
+          </button>
+        </div>
+
+        <input type="email" class="form-control" name="content" id="" placeholder="Do share...">
+
+        <div class="input-group-btn">
+          <button type="submit" class="btn btn-lg btn-success">
+            share
+          </button>
+        </div>
+      </div>
     </div>
 
   </form>
