@@ -2,11 +2,15 @@ angular.module('App', [
   // ng deps
   'ngRoute',
 
+  // vendor deps
+  'firebase',
+
   // our components
   'App.header',
   'App.onimageload',
   'App.shareForm',
   'App.cuboidInput',
+  'App.storage',
 
   // our views
   'App.home'

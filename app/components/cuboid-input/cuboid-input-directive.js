@@ -10,16 +10,12 @@ function cuboidInput() {
       scope.submitIconElm = elm.find('.submit-icon');
 
       scope.onTextFocus = function() {
-        console.log('focus');
         scope.formElm.addClass('ready');
       };
 
       scope.onTextBlur = function() {
         if (scope.textElm.val() == '') {
-          console.log('remove ready');
           scope.formElm.removeClass('ready');
-        } else {
-          console.log('dont remove ready');
         }
       };
 

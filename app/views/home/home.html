@@ -12,9 +12,9 @@
       <i class="fa fa-smile-o"></i>
     </h1>
 
-    <div class="panel" ng-repeat="high in [1,2,3,4,5]">
+    <div class="panel" ng-repeat="high in home.highs">
       <div class="panel-body">
-        Something so rad, I had to share it.
+        <pre>{{ high | json }}</pre>
         <div class="text-muted">&mdash; Someone</div>
       </div>
     </div>
@@ -24,9 +24,10 @@
     <h1 class="page-header text-center text-muted">
       <i class="fa fa-frown-o"></i>
     </h1>
-    <div class="panel" ng-repeat="low in [1,2,3,4]">
+
+    <div class="panel" ng-repeat="low in home.lows">
       <div class="panel-body">
-        There'd be no highs if this were not here.
+        <pre>{{ low | json }}</pre>
         <div class="text-muted">&mdash; Someone</div>
       </div>
     </div>

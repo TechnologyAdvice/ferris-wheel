@@ -1,7 +1,8 @@
-function HomeController() {
+function HomeController(StorageFactory) {
   var vm = this;
 
-  vm.heading = 'Home Page';
+  vm.highs = StorageFactory.highs;
+  vm.lows = StorageFactory.lows;
 
   return vm;
 }
