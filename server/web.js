@@ -89,7 +89,7 @@ app.post('/slack', function(req, res) {
 //
 // Serve Static
 app.use('/', express.static(CONFIG.paths.serverRoot));
-app.use('/', express.static(CONFIG.paths.bowerComponents));
+app.use('/', express.static(CONFIG.paths.projectRoot));
 
 
 //
