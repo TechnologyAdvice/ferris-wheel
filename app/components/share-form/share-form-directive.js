@@ -1,4 +1,4 @@
-function shareForm($timeout) {
+function shareForm() {
   return {
     restrict: 'E',
     replace: true,
