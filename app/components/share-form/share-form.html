@@ -1,32 +1,20 @@
 <div class="fw-share-form">
-  <form name="shareForm">
 
-    <div class="form-group">
+  <div class="fw-share-toggle">
+    <button type="button" class="btn btn-lg btn-default btn-block" ng-click="toggleIsHigh()">
+      <span class="fw-high" ng-show="isHigh">
+        <i class="fa fa-smile-o"></i>
+        <span class="fw-label">high</span>
+      </span>
+      <span class="fw-low" ng-show="!isHigh">
+        <i class="fa fa-frown-o"></i>
+        <span class="fw-label">low</span>
+      </span>
+    </button>
+  </div>
 
-      <div class="input-group input-group-lg">
+  <div class="fw-share-input">
+    <cuboid-input></cuboid-input>
+  </div>
 
-        <div class="input-group-btn">
-          <button type="button" class="btn btn-lg btn-default" ng-click="toggleIsHigh()">
-            <span class="fw-high" ng-show="isHigh">
-              <i class="fa fa-smile-o"></i>
-              <span class="fw-label">high</span>
-            </span>
-            <span class="fw-low" ng-show="!isHigh">
-              <i class="fa fa-frown-o"></i>
-              <span class="fw-label">low</span>
-            </span>
-          </button>
-        </div>
-
-        <input type="email" class="form-control" name="content" placeholder="Do share...">
-
-        <div class="input-group-btn">
-          <button type="submit" class="btn btn-lg btn-success">
-            <i class="fa fa-arrow-right"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-
-  </form>
 </div>

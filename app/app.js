@@ -6,6 +6,7 @@ angular.module('App', [
   'App.header',
   'App.onimageload',
   'App.shareForm',
+  'App.cuboidInput',
 
   // our views
   'App.home'
