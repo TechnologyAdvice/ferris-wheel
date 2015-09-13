@@ -1,0 +1,15 @@
+<div class="panel">
+  <div class="panel-body">
+    <!--<pre>{{ data | json }}</pre>-->
+    <p class="lead">
+      {{ text }}
+    </p>
+
+    <div class="text-muted">
+      <small class="text-muted">@{{ username }}</small>
+      <small ng-show="slackTeam">
+        <i class="fa fa-slack"></i>{{ slackTeam }}
+      </small>
+    </div>
+  </div>
+</div>

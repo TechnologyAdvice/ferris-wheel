@@ -1,35 +1,32 @@
 <div class="container">
+  <!-- Share -->
   <div class="col-xs-12">
     <share-form></share-form>
   </div>
 
-  <div class="col-xs-12">
-    <hr />
-  </div>
-
+  <!-- Highs -->
   <div class="col-sm-6">
     <h1 class="page-header text-center text-muted">
       <i class="fa fa-smile-o"></i>
     </h1>
-
-    <div class="panel" ng-repeat="high in home.highs">
-      <div class="panel-body">
-        <pre>{{ high | json }}</pre>
-        <div class="text-muted">&mdash; Someone</div>
-      </div>
-    </div>
+    <experience-card
+      ng-repeat="high in home.highs"
+      text="high.text"
+      username="high.username"
+      slack-team="high.meta.teamDomain">
+    </experience-card>
   </div>
 
+  <!-- Lows -->
   <div class="col-sm-6">
     <h1 class="page-header text-center text-muted">
       <i class="fa fa-frown-o"></i>
     </h1>
-
-    <div class="panel" ng-repeat="low in home.lows">
-      <div class="panel-body">
-        <pre>{{ low | json }}</pre>
-        <div class="text-muted">&mdash; Someone</div>
-      </div>
-    </div>
+    <experience-card
+      ng-repeat="low in home.lows"
+      text="low.text"
+      username="low.username"
+      slack-team="low.meta.teamDomain">
+    </experience-card>
   </div>
 </div>

@@ -11,6 +11,7 @@ angular.module('App', [
   'App.shareForm',
   'App.cuboidInput',
   'App.storage',
+  'App.experienceCard',
 
   // our views
   'App.home'

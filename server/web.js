@@ -6,7 +6,7 @@ var request = require('request');
 var bodyParser = require('body-parser');
 var path = require('path');
 
-var CONFIG = require('../config.js');
+var CONFIG = require('../config');
 var slackHelper = require('./slack-helper');
 
 ////
@@ -35,14 +35,14 @@ var lrOptions = {
 };
 
 
-/////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
 // SERVER
 
 http.createServer(app).listen(CONFIG.devServer.port, function() {
   if (CONFIG.env.inProduction) {
     // keep alive
     setInterval(function() {
-      request.get("https://ferris-wheel.herokuapp.com/");
+      request.get(CONFIG.herokuUrl);
     }, 300000);
   } else {
     // live reload
@@ -52,14 +52,12 @@ http.createServer(app).listen(CONFIG.devServer.port, function() {
 });
 
 
-/////////////////////////////////////////////////////////////
-// Routing
-
+///////////////////////////////////////////////////////////////////////////////
+// Middleware
 
 //
 // Logger
 app.use(logfmt.requestLogger());
-
 
 //
 // Parse Req Body
@@ -68,32 +66,38 @@ app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-
-//
-// Slack
-app.post('/slack', function(req, res) {
-  var parsed = slackHelper.parseSlashCommand(req.body.text);
-  console.log('text:', req.body.text);
-  console.log('parsed:', parsed);
-  var title = parsed.title;
-  var type = parsed.type;
-  var items = parsed.items;
-
-  slackHelper.createList(title, type, items, function(err, link) {
-    console.log('err:', err, 'link:', link);
-    err ? res.status(400) : res.status(200).send(link);
-  });
-});
-
-
 //
 // Serve Static
 app.use('/', express.static(CONFIG.paths.serverRoot));
 app.use('/', express.static(CONFIG.paths.projectRoot));
 
 
+///////////////////////////////////////////////////////////////////////////////
+// Routing
+
 //
-// Angular html5mode
+// Slack
+app
+  .post('/slack/high', function(req, res) {
+    slackHelper.saveExperience('high', req.body)
+      .then(function(response) {
+        res.status(200).send(response);
+      }, function(err) {
+        res.status(400).send(err);
+      });
+  })
+
+  .post('/slack/low', function(req, res) {
+    slackHelper.saveExperience('low', req.body)
+      .then(function(response) {
+        res.status(200).send(response);
+      }, function(err) {
+        res.status(400).send(err);
+      });
+  });
+
+//
+// Send all other routes to Angular (html5Mode)
 app.all('/*', function(req, res) {
   res.sendFile(CONFIG.paths.serverRoot + '/index.html');
 });

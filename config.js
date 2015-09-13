@@ -36,4 +36,10 @@ CONFIG.devServer = {
   url: protocol + '://' + host + ':' + port
 };
 
+//
+// URLs
+//
+CONFIG.herokuUrl = 'https://ferris-wheel.herokuapp.com';
+CONFIG.firebaseUrl = 'https://ferris-wheel.firebaseio.com';
+
 module.exports = CONFIG;
