@@ -6,12 +6,11 @@ angular.module('App', [
   'firebase',
 
   // our components
+  'App.cuboid',
+  'App.experienceCard',
   'App.header',
   'App.onimageload',
-  'App.shareForm',
-  'App.cuboidInput',
-  'App.storage',
-  'App.experienceCard',
+  'App.experience',
 
   // our views
   'App.home'

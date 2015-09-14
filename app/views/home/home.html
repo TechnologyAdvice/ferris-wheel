@@ -1,14 +1,38 @@
 <div class="container">
-  <!-- Share -->
-  <div class="col-xs-12">
-    <share-form></share-form>
-  </div>
-
   <!-- Highs -->
   <div class="col-sm-6">
     <h1 class="page-header text-center text-muted">
       <i class="fa fa-smile-o"></i>
     </h1>
+
+    <cuboid current-face="{{ home.highCuboidFace }}">
+      <cuboid-face>
+        <form ng-submit="home.highCuboidFace = 2">
+          <input
+            class="form-control input-lg"
+            type="text"
+            ng-model="home.high.text"
+            placeholder="What is awesome?"
+            />
+          <button type="submit" ng-hide="true"></button>
+        </form>
+      </cuboid-face>
+      <cuboid-face>
+        <form ng-submit="home.submitHigh()">
+          <input
+            class="form-control input-lg"
+            type="text"
+            ng-model="home.high.username"
+            placeholder="Your name"
+            />
+          <button type="submit" ng-hide="true"></button>
+        </form>
+      </cuboid-face>
+      <cuboid-face>
+        <cuboid-text>Thanks!</cuboid-text>
+      </cuboid-face>
+    </cuboid>
+
     <experience-card
       ng-repeat="high in home.highs"
       text="high.text"
@@ -22,6 +46,35 @@
     <h1 class="page-header text-center text-muted">
       <i class="fa fa-frown-o"></i>
     </h1>
+
+    <cuboid current-face="{{ home.lowCuboidFace }}">
+      <cuboid-face>
+        <form ng-submit="home.lowCuboidFace = 2">
+          <input
+            class="form-control input-lg"
+            type="text"
+            ng-model="home.low.text"
+            placeholder="What sucks?"
+            />
+          <button type="submit" ng-hide="true"></button>
+        </form>
+      </cuboid-face>
+      <cuboid-face>
+        <form ng-submit="home.submitLow()">
+          <input
+            class="form-control input-lg"
+            type="text"
+            ng-model="home.low.username"
+            placeholder="Your name"
+            />
+          <button type="submit" ng-hide="true"></button>
+        </form>
+      </cuboid-face>
+      <cuboid-face>
+        <cuboid-text>Thanks!</cuboid-text>
+      </cuboid-face>
+    </cuboid>
+
     <experience-card
       ng-repeat="low in home.lows"
       text="low.text"

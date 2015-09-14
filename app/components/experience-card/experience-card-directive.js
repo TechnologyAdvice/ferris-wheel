@@ -9,7 +9,6 @@ function experienceCard() {
     },
     templateUrl: 'components/experience-card/experience-card.html',
     link: function(scope, elm, attrs) {
-      console.log(scope);
     }
   }
 }
