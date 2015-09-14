@@ -9,7 +9,13 @@ Add a couple slash commands:
 
 **/low** - pointed to http://ferris-wheel.herokuapp.com/slack/low
 
-User names and Slack team name is collected.
+Usage:
+```
+/high <description>
+/low <description>
+```
+
+Slack username and team domain is collected when posting.
 
 That's it!
 
