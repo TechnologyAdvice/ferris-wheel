@@ -52,7 +52,7 @@ slackHelper.saveExperience = function saveExperience(type, body) {
       // listen once for experience to be saved
       experienceRef.once('value', function(dataSnapshot) {
         resolve(
-          'Thanks for sharing: ' + CONFIG.herokuUrl);
+          'Thanks for sharing! ' + CONFIG.herokuUrl);
       }, function(err) {
         reject('Who');
       });
