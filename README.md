@@ -1,4 +1,6 @@
 # [Ferris Wheel](http://ferris-wheel.herokuapp.com/)
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/TechnologyAdvice/ferris-wheel.svg)](https://greenkeeper.io/)
 Share your highs and lows.
 
 # Slack Integration
